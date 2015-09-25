@@ -108,23 +108,22 @@ class TweetScrape():
         '''
         winexe = WindowsCmds # Windows class object creation.
 
-        try:
-            if command == "MidtermMadness": 
-                winexe.killFirefox()
+        if command == "MidtermMadness": 
+            winexe.killFirefox()
 
-            elif command  == "GolisanoSmash":
-                winexe.killExplorer()
+        elif command  == "GolisanoSmash":
+            winexe.killExplorer()
 
-            elif command  == "Daryl":
-                winexe.magnify()
+        elif command  == "Daryl":
+            winexe.magnify()
 
-            elif command  == "Deli":
-                winexe.logOff()
+        elif command  == "Deli":
+            winexe.logOff()
 
-            elif command  == "YuanSpawn":
-                winexe.calcMe()
-        except: #Something didn't work, lets continue.
-            continue
+        elif command  == "YuanSpawn":
+            winexe.calcMe()
+        else:
+            print("woops")
 
     def split_tweet(self, dottedTweet):
         '''
