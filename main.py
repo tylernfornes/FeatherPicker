@@ -25,7 +25,7 @@ class WindowsCmds():
     def logOff(self):
         os.system('shutdown /l')
 
-    def logOff(self):
+    def magnify(self):
         os.system('magnify.exe')
 
     def calcMe(self):
