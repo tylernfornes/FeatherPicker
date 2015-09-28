@@ -22,8 +22,6 @@ to perform against said machine.
 * Killing Explorer
 * Launching a thousand calc.exe (death by calc).
 
-
-
-
-
-
+### Known issues
+If there are a large ammount of requests occuring at once, then a race condition exists
+and which ever tweet is first will be the once scraped by FeatherPicker.
